@@ -1,6 +1,4 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class QueueDeque {
     public static void main(String[] args) {
@@ -11,10 +9,10 @@ public class QueueDeque {
 //        System.out.println(q.poll());
 //        System.out.println(q.poll());
 //        System.out.println(q.isEmpty());
-        JosephusProblem();
-
+//        JosephusProblem();
+        DoubleEndedQueue();
     }
-
+//1158/ 11866
     public static void JosephusProblem () {
         Queue<Integer> queue = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
@@ -36,5 +34,18 @@ public class QueueDeque {
         }
         sb.delete(sb.length()-2, sb.length());
         System.out.println(sb+">");
+    }
+
+    public static void DoubleEndedQueue () {
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.offerFirst(1);
+        deque.offerLast(2);
+        deque.pollFirst();
+        System.out.println(deque);
+        deque.push(1);
+        System.out.println(deque.peekLast());
+        deque.pollLast();
+        System.out.println(deque);
+
     }
 }
